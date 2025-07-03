@@ -126,6 +126,10 @@ app.get('/me', (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Voting System API 🚀');
+}
+);
 
 app.listen(5000, () => {
   console.log('🚀 Server running on http://localhost:5000');
