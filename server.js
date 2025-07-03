@@ -111,9 +111,21 @@ app.post('/logout', (req, res) => {
   res.json({ success: true, message: 'Logged out' });
 });
 
-app.get('/',(req, res) => {
-  res.send('Welcome to the Voting System API');
+// ✅ Get logged-in user info (check authentication status)
+app.get('/me', (req, res) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).json({ success: false, message: 'Unauthorized' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    return res.status(200).json({ success: true, userId: decoded.id });
+  } catch (error) {
+    return res.status(401).json({ success: false, message: 'Invalid token' });
+  }
 });
+
 
 app.listen(5000, () => {
   console.log('🚀 Server running on http://localhost:5000');
