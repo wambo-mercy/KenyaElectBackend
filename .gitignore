@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: if using PM2 logs
+pids
+*.pid
+*.seed
+
+# Debug
+.vscode/
+.idea/
+
+# Dependency directories
+jspm_packages/
+
+# Coverage directory used by testing tools
+coverage/
+
+# Optional cache files
+.cache/
+.next/
+dist/
+build/
+
+# npm cache
+.npm/
+
+# Local runtime data
+*.local
+
+# Optional: if using Docker
+docker-compose.override.yml
+
+# TypeScript cache
+*.tsbuildinfo
